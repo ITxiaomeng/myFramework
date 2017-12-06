@@ -4,18 +4,9 @@
 sf = sf or {}
 
 function sf.createScene( layerName, path, params )
-	local baseLayer = LayerManager:getBaseLayer()
-	if baseLayer then
-		local layer = baseLayer:getChildByName(layerName)
-		if layer then
-			print("======已经存在这个layer了，不能重复添加=====")
-			return
-		end
-		params = params or {}
-		params.layerName = layerName
-		return LayerManager.addLayout(path, params)
-	end
-
+	params = params or {}
+	params.layerName = layerName
+	return LayerManager.addLayout(path, params)
 end
 
 function sf.createPop( layerName, path, params )

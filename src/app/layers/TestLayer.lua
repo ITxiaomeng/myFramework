@@ -31,27 +31,27 @@ function TestLayer:initUI()
 	-- local layer = RubCardLayer:create("poker_0_0.png", "poker_1_3.png", display.width / 2, display.height / 2, endCallback)
 	-- self:addChild(layer)
 
-	sf.sendHttp({
-		apiName = "Center_main",
-		sendType = 1,
-		params = {
-			status = 1,
-			name = "enter",
-		},
-		successCallback = function ( data )
-			print("请求成功")
-			label:setString(tostring(data.url))
-			self.uid = data.uid
-			if data.pos then
-				local posStr = string.split(data.pos, ",")
-				local player = sf.createSprite("res/confirm_btn_cancel_scale9_p.png")
-				player:setPosition(cc.p(tonumber(posStr[1]),tonumber(posStr[1])))
-				self:addChild(player)
-				self.player = player
-				self:doTouchAction()
-			end
-		end
-		})
+	-- sf.sendHttp({
+	-- 	apiName = "Center_main",
+	-- 	sendType = 1,
+	-- 	params = {
+	-- 		status = 1,
+	-- 		name = "enter",
+	-- 	},
+	-- 	successCallback = function ( data )
+	-- 		print("请求成功")
+	-- 		label:setString(tostring(data.url))
+	-- 		self.uid = data.uid
+	-- 		if data.pos then
+	-- 			local posStr = string.split(data.pos, ",")
+	-- 			local player = sf.createSprite("res/confirm_btn_cancel_scale9_p.png")
+	-- 			player:setPosition(cc.p(tonumber(posStr[1]),tonumber(posStr[1])))
+	-- 			self:addChild(player)
+	-- 			self.player = player
+	-- 			self:doTouchAction()
+	-- 		end
+	-- 	end
+	-- 	})
 
 
 end

@@ -1,16 +1,15 @@
 
 LayerManager = {}
 
-local mBaseLayer = nil
+local mBaseLayer = cc.Layer:create()
 local popStack = {}
 local sceneStack = {}
 
 local mDirector = cc.Director:getInstance()
-function LayerManager.pushModule( layerName )
+function LayerManager.pushModule( layerName, path, params )
 	local scene = cc.Scene:create()
-	local layer = require(layerName):create()
-	mBaseLayer = layer
-	scene:addChild(layer)
+	local layer = sf.createScene(layerName, path, params)
+	scene:addChild(mBaseLayer)
 	cc.Director:getInstance():replaceScene(scene)
 end
 

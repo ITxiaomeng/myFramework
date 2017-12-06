@@ -8,7 +8,7 @@ require "cocos.init"
 require "src.init"
 
 local function main()
-    LayerManager.pushModule("src/app/layers/TestLayer.lua")
+    LayerManager.pushModule("MainScene", "src/app/layers/TestLayer.lua", {})
     -- sf.createPop("TestLayer2", "src/app/layers/TestLayer2.lua", {})
 end
 
