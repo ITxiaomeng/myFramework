@@ -10,7 +10,7 @@ require "src.init"
 local function main()
     LayerManager.pushModule("MainScene", "src/app/layers/TestLayer.lua", {})
     -- sf.createPop("TestLayer2", "src/app/layers/TestLayer2.lua", {})
-    print("test xcode commit")
+    print("test xcode commit----")
 end
 
 function __G__TRACKBACK__( msg )
